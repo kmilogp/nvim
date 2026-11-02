@@ -4,7 +4,7 @@ if not ok then return end
 conform.setup {
   notify_on_error = false,
   format_on_save = function(bufnr)
-    local disable_filetypes = { c = true, cpp = true, vue = true, javascript = true, typescript = true, php = true, json = true, markdown = true }
+    local disable_filetypes = { c = true, cpp = true, vue = true, javascript = true, typescript = true, php = true, json = true, markdown = true, go = true }
     local ft = vim.bo[bufnr].filetype
     local bufname = vim.api.nvim_buf_get_name(bufnr)
 
@@ -27,6 +27,7 @@ conform.setup {
     vue = { 'oxfmt' },
     json = { 'oxfmt' },
     php = { 'php_cs_fixer' },
+    go = { 'gofmt' },
   },
 }
 
